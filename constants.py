@@ -1,5 +1,5 @@
 # Files path
-SUBFOLDERS = ['x_1', 'x_2', 'x_3', 'vx_1', 'vx_2', 'vx_3']
+SUBFOLDERS = ['x_1', 'x_2', 'x_3', 'vx_1', 'vx_2', 'vx_3', 'J20']
 PATH_VARIATION_LOG = "log/variation_selection.log"
 PATH_ORBIT_LOG = "log/orbit_improvements.log"
 PATH_OUT = "EPH.OUT"
@@ -13,6 +13,9 @@ PATH_OBSERVATION_DATA = "data/orbit_improvements/observation_data.csv"
 PATH_CALCULATION_DATA = "data/orbit_improvements/calculation_data_iteration_{}.csv"
 PATH_RESULT = "data/orbit_improvements/result.csv"
 PATH_FIGURE = "pics/derivative_variation_{}.png"
+
+# J20 Coefficient
+J20 = -0.186987635955E-09
 
 # Arcsecond
 ARCSECOND = 0.01
