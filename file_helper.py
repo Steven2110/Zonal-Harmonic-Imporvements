@@ -66,17 +66,8 @@ class FileHelper:
         ))
         
     def modify_garm360_in(self, new_value):
-        # The value you want to rewrite in 4th row, 3rd column
-        # new_value = -0.186987635955E-09 + variation
-
-        # Read all lines
         with open(PATH_360_SOURCE, "r") as f:
             lines = f.readlines()
-        
-        # Make sure the file has at least 4 lines
-        if len(lines) < 4:
-            raise ValueError("File does not have enough lines to modify the 4th row.")
-
         # Process lines
         updated_lines = []
         for i, line in enumerate(lines):

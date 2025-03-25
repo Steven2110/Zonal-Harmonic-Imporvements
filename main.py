@@ -32,6 +32,7 @@ class OrbitalImprovement:
         ])
         self.t = T / N
         self.initial_coordinate, self.initial_velocity = self.calculate_initial_coordinate_velocity()
+        fh.modify_garm360_in(J20)
         self.calculate_observation_data()
         self.delta_coordinate, self.delta_velocity, self.delta_j20 = self.generate_error()
         self.intermediate_coordinate = self.initial_coordinate
@@ -55,7 +56,7 @@ class OrbitalImprovement:
             np.random.uniform(-1, 1) * arcsecond_radian * modulus_velocity,
             np.random.uniform(-1, 1) * arcsecond_radian * modulus_velocity
         ])
-        delta_j20 = np.random.uniform(-1, 1) / 100 * J20
+        delta_j20 = np.random.uniform(-1, 1) / 10000 * J20
         logger.log_info(f"Delta coordinate: {delta_coordinate}.")
         logger.log_info(f"Delta velocity: {delta_velocity}.")
         
@@ -294,7 +295,7 @@ class OrbitalImprovement:
             velocity_with_variation = np.split(coordinate_velocity_with_variation, 2)[1]
             
             if column == 6:
-                fh.modify_garm360_in(new_value=self.variation_j20)
+                fh.modify_garm360_in(new_value=J20 + self.variation_j20)
             
             fh.configure_file(
                 coordinate=coordinate_with_variation,

@@ -15,7 +15,7 @@ PATH_RESULT = "data/orbit_improvements/result.csv"
 PATH_FIGURE = "pics/derivative_variation_{}.png"
 
 # J20 Coefficient
-J20 = -0.186987635955E-09
+J20 = -0.484165371736E-03
 
 # Arcsecond
 ARCSECOND = 0.01
